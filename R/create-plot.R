@@ -11,6 +11,14 @@ df = read_csv("data/weatherAUS.csv")
 
 city = "Brisbane"
 
+time_series =
+  df %>%
+  filter(Location == city) %>%
+  ggplot(aes(x = Date, y = Temp9am)) +
+  geom_line()
+ggsave(filename = "graphics/timeseries-rainfall.png",
+       plot = scatter_plot)
+
 scatter_plot = 
 df %>%
   filter(Location == city) %>%
